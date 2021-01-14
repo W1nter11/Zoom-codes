@@ -3,7 +3,7 @@ teacher1 = 0
 teacher2 = 0
 print("Предмет")
 print("--------")
-print("1. Илюша")
+print(". Илюша")
 print("2. Физика")
 print("3. Матеша")
 print("4. Технологии")
