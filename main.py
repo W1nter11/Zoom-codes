@@ -3,6 +3,9 @@ def addToClipBoard(text):
     command = 'echo | set /p nul=' + text.strip() + '| clip'
     os.system(command)
 
+
+os.startfile(r'C:\Users\User\AppData\Roaming\Zoom\bin\Zoom.exe')
+
 lesson = 0
 teacher0 = 0
 teacher1 = 0
