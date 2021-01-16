@@ -1,21 +1,7 @@
 import os
-def addToClipBoard(text):
-    command = 'echo | set /p nul=' + text.strip() + '| clip'
-    os.system(command)
 
 
 os.startfile(r'C:\Users\User\AppData\Roaming\Zoom\bin\Zoom.exe')
-
-lesson = 0
-teacher0 = 0
-teacher1 = 0
-teacher2 = 0
-idntpswrd0 = 0
-idntpswrd1 = 0
-
-
-
-
 
 
 print("Предмет")
@@ -31,212 +17,89 @@ print("8. Биология")
 print("9. Информатика")
 print("--------------")
 
+
+lessons = ["Илюша", "Физика", "Матеша", "Технологии", "Инглиш", "Укр.мова,літ", "Химия", "Биология", "Информатика"]
+two_group_teachers = ["1. Наталия Вадимовна ","2. Ирина Олеговна ","1. Инна ","2. Лиля ","1. Татьяна Ткачова ","2. Дарья Евгеньевна "]
 codes = ["856 443 7134","717 7405 4453","762 646 9234","783 6085 9503","793 1912 0930","379 853 5977","477 262 1065","560 686 4530","7381071026","4931440227","712 5230 4808","787 1770 4362"]
-passwords = ["925830","JtReP1","441021","K41fvD","7tdLkB","111","864128","537607","123456","981083","YFqV2p","3Ux5s9"]
+passwords = ["925830", "JtReP1", "441021", "K41fvD", "7tdLkB", "111", "864128", "537607", "123456", "981083", "YFqV2p", "3Ux5s9"]
+teacher_of_the_lesson = ["Учитель по инглишу: ","Учитель по укр.яз/лит: ","Учитель по информатике: "]
 
-i = 1
-while i == 1 :
+
+def addToClipBoard(text):
+    command = 'echo | set /p nul=' + text.strip() + '| clip'
+    os.system(command)
+
+
+def lessonwithoneteacher(a, b):
+  if lesson == a :
+    print("--------------")
+    print('' + lessons[b])
   
-  lesson = int(input('Номер урока: '))
 
-  if lesson == 1 :
-    print("--------------")
-    print("Илюша")
-    print("1. Скопировать идентефикатор ")
-    print("2. Скопировать пароль ")
-    print("--------------")
-    idntpswrd0 = int(input('?: '))
+def idntpswrdfirst(a, b):
+  print("1. Скопировать идентефикатор ")
+  print("2. Скопировать пароль ")
+  print("--------------")
+  idntpswrd0 = int(input('Что скопировать?: '))
   if idntpswrd0 == 1 : 
     print("Скопировано в буфер обмена")
-    addToClipBoard('' + codes[0])
+    addToClipBoard('' + codes[a])
     idntpswrd0 = 0
   if idntpswrd0 == 2 : 
     print("Скопировано в буфер обмена")
-    addToClipBoard('' + passwords[0])
+    addToClipBoard('' + passwords[b])
     idntpswrd0 = 0
-  if lesson == 2 :
+
+
+def lessonwithtwoteachers(a, b, c, d, e, f, g, h, i):
+  if lesson == a :
     print("--------------")
-    print("Физика")
-    print("1. Скопировать идентефикатор ")
-    print("2. Скопировать пароль ")
+    print('' + lessons[b])
+    print('' + two_group_teachers[c])
+    print('' + two_group_teachers[d])
     print("--------------")
-    idntpswrd0 = int(input('?: '))
-  if idntpswrd0 == 1 : 
-    print("Скопировано в буфер обмена")
-    addToClipBoard('' + codes[1])
-    idntpswrd0 = 0
-  if idntpswrd0 == 2 : 
-    print("Скопировано в буфер обмена")
-    addToClipBoard('' + passwords[1])
-    idntpswrd0 = 0
-  if lesson == 3 :
-    print("--------------")
-    print("Матеша")
-    print("1. Скопировать идентефикатор ")
-    print("2. Скопировать пароль ")
-    print("--------------")
-    idntpswrd0 = int(input('?: '))
-  if idntpswrd0 == 1 : 
-    print("Скопировано в буфер обмена")
-    addToClipBoard('' + codes[2])
-    idntpswrd0 = 0
-  if idntpswrd0 == 2 : 
-    print("Скопировано в буфер обмена")
-    addToClipBoard('' + passwords[2])
-    idntpswrd0 = 0
-  if lesson == 4 :
-    print("--------------")
-    print("Технологии")
-    print("1. Скопировать идентефикатор ")
-    print("2. Скопировать пароль ")
-    print("--------------")
-    idntpswrd0 = int(input('?: '))
-  if idntpswrd0 == 1 : 
-    print("Скопировано в буфер обмена")
-    addToClipBoard('' + codes[3])
-    idntpswrd0 = 0
-  if idntpswrd0 == 2 : 
-    print("Скопировано в буфер обмена")
-    addToClipBoard('' + passwords[3])
-    idntpswrd0 = 0
-  if lesson == 5 :
-    print("--------------")
-    print("1. Наталия Вадимовна ")
-    print("2. Ирина Олеговна ")
-    print("--------------")
-    teacher0 = int(input('Учитель по инглишу: '))
+    teacher0 = int(input('' + teacher_of_the_lesson[e]))
   if teacher0 == 1:
-    print("--------------")
-    print("Инглиш (Наталия Вадимовна)")
-    print("1. Скопировать идентефикатор ")
-    print("2. Скопировать пароль ")
-    print("--------------")
-    idntpswrd1 = int(input('?: '))
-  if idntpswrd1 == 1 : 
-    print("Скопировано в буфер обмена")
-    addToClipBoard('' + codes[4])
-    idntpswrd1 = 0
-  if idntpswrd1 == 2 : 
-    print("Скопировано в буфер обмена")
-    addToClipBoard('' + passwords[4])
-    idntpswrd1 = 0
+    idntpswrdfirst(f, g)
   if teacher0 == 2:
-    print("--------------")
-    print("Инглиш (Ирина Олеговна)")
-    print("1. Скопировать идентефикатор ")
-    print("2. Скопировать пароль ")
-    print("--------------")
-    idntpswrd1 = int(input('?: '))
-  if idntpswrd1 == 1 : 
-    print("Скопировано в буфер обмена")
-    addToClipBoard('' + codes[5])
-    idntpswrd1 = 0
-  if idntpswrd1 == 2 : 
-    print("Скопировано в буфер обмена")
-    addToClipBoard('' + passwords[5])
-    idntpswrd1 = 0
+    idntpswrdfirst(h, i)
+  
+
+u = 0
+lesson = 0
+teacher0 = 0
+teacher1 = 0
+teacher2 = 0
+idntpswrd0 = 0
+
+
+while u == 0:
+  lesson = int(input('Номер урока: '))
+  if lesson == 1 :
+    lessonwithoneteacher(1, 0)
+    idntpswrdfirst(0, 0)
+  if lesson == 2 :
+    lessonwithoneteacher(2, 1)
+    idntpswrdfirst(1, 1)
+  if lesson == 3 :
+    lessonwithoneteacher(3, 2)
+    idntpswrdfirst(2, 2)
+  if lesson == 4 :
+    lessonwithoneteacher(4, 3)
+    idntpswrdfirst(3, 3)
+  if lesson == 5 :
+    lessonwithtwoteachers(5, 4, 0, 1, 0, 4, 4, 5, 5)
   if lesson == 6 :
-    print("--------------")
-    print("1. Инна ")
-    print("2. Лиля ")
-    print("--------------")
-    teacher1 = int(input('Учитель по укр.яз/лит: '))
-  if teacher1 == 1:
-    print("--------------")
-    print("Укр.мова,літ (Инна)")
-    print("1. Скопировать идентефикатор ")
-    print("2. Скопировать пароль ")
-    print("--------------")
-    idntpswrd1 = int(input('?: '))
-  if idntpswrd1 == 1 : 
-    print("Скопировано в буфер обмена")
-    addToClipBoard('' + codes[6])
-    idntpswrd1 = 0
-  if idntpswrd1 == 2 : 
-    print("Скопировано в буфер обмена")
-    addToClipBoard('' + passwords[6])
-    idntpswrd1 = 0
-  if teacher1 == 2:
-    print("--------------")
-    print("Укр.мова,літ (Лиля)")
-    print("1. Скопировать идентефикатор ")
-    print("2. Скопировать пароль ")
-    print("--------------")
-    idntpswrd1 = int(input('?: '))
-  if idntpswrd1 == 1 : 
-    print("Скопировано в буфер обмена")
-    addToClipBoard('' + codes[7])
-    idntpswrd1 = 0
-  if idntpswrd1 == 2 : 
-    print("Скопировано в буфер обмена")
-    addToClipBoard('' + passwords[7])
-    idntpswrd1 = 0
+    lessonwithtwoteachers(6, 5, 2, 3, 1, 6, 6, 7, 7)
   if lesson == 7 :
-    print("--------------")
-    print("Химия")
-    print("1. Скопировать идентефикатор ")
-    print("2. Скопировать пароль ")
-    print("--------------")
-    idntpswrd0 = int(input('?: '))
-  if idntpswrd0 == 1 : 
-    print("Скопировано в буфер обмена")
-    addToClipBoard('' + codes[8])
-    idntpswrd0 = 0
-  if idntpswrd0 == 2 : 
-    print("Скопировано в буфер обмена")
-    addToClipBoard('' + passwords[8])
-    idntpswrd0 = 0
+    lessonwithoneteacher(7, 6)
+    idntpswrdfirst(8, 8)
   if lesson == 8 :
-    print("--------------")
-    print("Биология")
-    print("1. Скопировать идентефикатор ")
-    print("2. Скопировать пароль ")
-    print("--------------")
-    idntpswrd0 = int(input('?: '))
-  if idntpswrd0 == 1 : 
-    print("Скопировано в буфер обмена")
-    addToClipBoard('' + codes[9])
-    idntpswrd0 = 0
-  if idntpswrd0 == 2 : 
-    print("Скопировано в буфер обмена")
-    addToClipBoard('' + passwords[9])
-    idntpswrd0 = 0
+    lessonwithoneteacher(8, 7)
+    idntpswrdfirst(9, 9)
   if lesson == 9 :
-    print("--------------")
-    print("Татьяна Ткачова")
-    print("Дарья Евгеньевна")
-    print("--------------")
-    teacher2 = int(input('Учитель по информатике: '))
-  if teacher2 == 1:
-    print("--------------")
-    print("Информатика (Татьяна Ткачова)")
-    print("1. Скопировать идентефикатор ")
-    print("2. Скопировать пароль ")
-    print("--------------")
-    idntpswrd1 = int(input('?: '))
-  if idntpswrd1 == 1 : 
-    print("Скопировано в буфер обмена")
-    addToClipBoard('' + codes[10])
-    idntpswrd1 = 0
-  if idntpswrd1 == 2 : 
-    print("Скопировано в буфер обмена")
-    addToClipBoard('' + passwords[10])
-    idntpswrd1 = 0
-  if teacher2 == 2:
-    print("--------------")
-    print("Информатика (Дарья Евгеньевна)")
-    print("1. Скопировать идентефикатор ")
-    print("2. Скопировать пароль ")
-    print("--------------")
-    idntpswrd1 = int(input('?: '))
-  if idntpswrd1 == 1 : 
-    print("Скопировано в буфер обмена")
-    addToClipBoard('' + codes[11])
-    idntpswrd1 = 0
-  if idntpswrd1 == 2 : 
-    print("Скопировано в буфер обмена")
-    addToClipBoard('' + passwords[11])
-    idntpswrd1 = 0
+    lessonwithtwoteachers(9, 8, 4, 5, 2, 10, 10, 11, 11)
+  
 
 
 
