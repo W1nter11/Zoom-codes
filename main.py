@@ -68,8 +68,6 @@ def lessonwithtwoteachers(a, b, c, d, e, f, g, h, i):
 u = 0
 lesson = 0
 teacher0 = 0
-teacher1 = 0
-teacher2 = 0
 idntpswrd0 = 0
 
 
