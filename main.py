@@ -15,13 +15,14 @@ print("6. Укр.мова,літ")
 print("7. Химия") 
 print("8. Биология")
 print("9. Информатика")
+print("10. LSE")
 print("--------------")
 
 
-lessons = ["Илюша", "Физика", "Матеша", "Технологии", "Инглиш", "Укр.мова,літ", "Химия", "Биология", "Информатика"]
+lessons = ["Илюша", "Физика", "Матеша", "Технологии", "Инглиш", "Укр.мова,літ", "Химия", "Биология", "Информатика","LSE"]
 two_group_teachers = ["1. Наталия Вадимовна ","2. Ирина Олеговна ","1. Инна ","2. Лиля ","1. Татьяна Ткачова ","2. Дарья Евгеньевна "]
-codes = ["856 443 7134","717 7405 4453","762 646 9234","783 6085 9503","793 1912 0930","379 853 5977","477 262 1065","560 686 4530","7381071026","4931440227","712 5230 4808","787 1770 4362"]
-passwords = ["925830", "JtReP1", "441021", "K41fvD", "7tdLkB", "111", "864128", "537607", "123456", "981083", "YFqV2p", "3Ux5s9"]
+codes = ["856 443 7134","717 7405 4453","762 646 9234","783 6085 9503","793 1912 0930","379 853 5977","477 262 1065","560 686 4530","7381071026","4931440227","712 5230 4808","787 1770 4362","96589277755"]
+passwords = ["925830", "JtReP1", "441021", "K41fvD", "7tdLkB", "111", "864128", "537607", "123456", "981083", "YFqV2p", "3Ux5s9","Без пароля"]
 teacher_of_the_lesson = ["Учитель по инглишу: ","Учитель по укр.яз/лит: ","Учитель по информатике: "]
 
 
@@ -30,39 +31,39 @@ def addToClipBoard(text):
     os.system(command)
 
 
-def lessonwithoneteacher(a, b):
-  if lesson == a :
+def lessonwithoneteacher(l_number, l_name):
+  if lesson == l_number :
     print("--------------")
-    print('' + lessons[b])
+    print('' + lessons[l_name])
   
 
-def idntpswrdfirst(a, b):
+def idntpswrdfirst(l_code, l_password):
   print("1. Скопировать идентефикатор ")
   print("2. Скопировать пароль ")
   print("--------------")
   idntpswrd0 = int(input('Что скопировать?: '))
   if idntpswrd0 == 1 : 
     print("Скопировано в буфер обмена")
-    addToClipBoard('' + codes[a])
+    addToClipBoard('' + codes[l_code])
     idntpswrd0 = 0
   if idntpswrd0 == 2 : 
     print("Скопировано в буфер обмена")
-    addToClipBoard('' + passwords[b])
+    addToClipBoard('' + passwords[l_password])
     idntpswrd0 = 0
 
 
-def lessonwithtwoteachers(a, b, c, d, e, f, g, h, i):
-  if lesson == a :
+def lessonwithtwoteachers(l_number, l_name, t_first, t_sec, l_teacher, l_code1, l_password1, l_code2, l_password2):
+  if lesson == l_number :
     print("--------------")
-    print('' + lessons[b])
-    print('' + two_group_teachers[c])
-    print('' + two_group_teachers[d])
+    print('' + lessons[l_name])
+    print('' + two_group_teachers[t_first])
+    print('' + two_group_teachers[t_sec])
     print("--------------")
-    teacher0 = int(input('' + teacher_of_the_lesson[e]))
+    teacher0 = int(input('' + teacher_of_the_lesson[l_teacher]))
   if teacher0 == 1:
-    idntpswrdfirst(f, g)
+    idntpswrdfirst(l_code1, l_password1)
   if teacher0 == 2:
-    idntpswrdfirst(h, i)
+    idntpswrdfirst(l_code2, l_password2)
   
 
 u = 0
@@ -97,6 +98,9 @@ while u == 0:
     idntpswrdfirst(9, 9)
   if lesson == 9 :
     lessonwithtwoteachers(9, 8, 4, 5, 2, 10, 10, 11, 11)
+  if lesson == 10:
+    lessonwithoneteacher(10, 9)
+    idntpswrdfirst(12, 12)
   
 
 
