@@ -38,18 +38,30 @@ def lessonwithoneteacher(l_number, l_name):
   
 
 def idntpswrdfirst(l_code, l_password):
-  print("1. Скопировать идентефикатор ")
-  print("2. Скопировать пароль ")
+  idnt0 = 0
+  pswrd0 = 0
   print("--------------")
-  idntpswrd0 = int(input('Что скопировать?: '))
-  if idntpswrd0 == 1 : 
+  print('1. Да ')
+  print('2. Нет ')
+  idnt0 = int(input('Скопировать идентификатор?: '))
+  print("--------------")
+  if idnt0 == 1 : 
     print("Скопировано в буфер обмена")
     addToClipBoard('' + codes[l_code])
-    idntpswrd0 = 0
-  if idntpswrd0 == 2 : 
+    idnt0 = 0
+    print('1. Да ')
+    print('2. Нет ')
+    pswrd0 = int(input('Скопировать пароль?: '))
+  else:
+    lesson = 0
+
+  if pswrd0 == 1:
+    print("--------------")
     print("Скопировано в буфер обмена")
     addToClipBoard('' + passwords[l_password])
-    idntpswrd0 = 0
+    pswrd0 = 0
+  else:
+    lesson = 0
 
 
 def lessonwithtwoteachers(l_number, l_name, t_first, t_sec, l_teacher, l_code1, l_password1, l_code2, l_password2):
@@ -69,7 +81,6 @@ def lessonwithtwoteachers(l_number, l_name, t_first, t_sec, l_teacher, l_code1, 
 u = 0
 lesson = 0
 teacher0 = 0
-idntpswrd0 = 0
 
 
 while u == 0:
@@ -101,8 +112,5 @@ while u == 0:
   if lesson == 10:
     lessonwithoneteacher(10, 9)
     idntpswrdfirst(12, 12)
-  
-
-
-
-
+  if lesson == 0:
+    lesson = int(input('Номер урока: '))
