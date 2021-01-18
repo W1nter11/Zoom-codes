@@ -44,22 +44,14 @@ def idntpswrdfirst(l_code, l_password):
   print('1. Да ')
   print('2. Нет ')
   idnt0 = int(input('Открыть ссылку на конференцию?: '))
-  print("--------------")
   if idnt0 == 1 : 
     s1=s.replace("code", codes[l_code] )
     webbrowser.open(s1, new=2)
     idnt0 = 0
-    print('1. Да ')
-    print('2. Нет ')
-    pswrd0 = int(input('Скопировать пароль?: '))
-  else:
-    lesson = 0
-
-  if pswrd0 == 1:
     print("--------------")
-    print("Скопировано в буфер обмена")
+    print('Пароль скопирован в буфер обмена ')
+    print("--------------")
     addToClipBoard('' + passwords[l_password])
-    pswrd0 = 0
   else:
     lesson = 0
 
