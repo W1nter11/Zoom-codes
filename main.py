@@ -2,7 +2,7 @@ import os
 import webbrowser
 
 
-os.startfile(r'C:\Users\User\AppData\Roaming\Zoom\bin\Zoom.exe')
+#os.startfile(r'C:\Users\User\AppData\Roaming\Zoom\bin\Zoom.exe')
 
 
 print("Предмет")
