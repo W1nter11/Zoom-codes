@@ -6,8 +6,8 @@ import webbrowser
 
 
 print("Предмет")
-print("--------")
-print("1. Илюша")
+print("-----")
+print("1. Илüша")
 print("2. Физика")
 print("3. Матеша")
 print("4. Технологии")
