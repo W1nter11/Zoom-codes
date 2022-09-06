@@ -1,7 +1,8 @@
 import os
 import webbrowser
+import sqlite3
 
-
+db = sqlite3.connect('main/data.db')
 #os.startfile(r'C:\Users\User\AppData\Roaming\Zoom\bin\Zoom.exe')
 
 
