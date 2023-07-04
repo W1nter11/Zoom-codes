@@ -4,7 +4,7 @@ def createdatabase():
     #freespace = [("", "", "")]
     with sqlite3.connect('data.sqlite') as db:
         cursor = db.cursor()
-        query = """ CREATE TABLE IF NOT EXISTS zoomcodes(lesson TEXT, code TEXT, password TEXT)  """
+        query = (" CREATE TABLE IF NOT EXISTS zoomcodes(lesson TEXT, code TEXT, password TEXT)  ")
         cursor.execute(query)
         db.commit()
         print("Nice")
@@ -29,7 +29,7 @@ def addtodatabase():
 def deletefromdatabase():
     with sqlite3.connect('data.sqlite') as db:
             cursor = db.cursor()
-            query = """DELETE FROM zoomcodes"""
+            query = ("DELETE FROM zoomcodes")
             cursor.execute(query)
             db.commit()
             print("Nice")
@@ -37,9 +37,16 @@ def deletefromdatabase():
 def droptable():
     with sqlite3.connect('data.sqlite') as db:
         cursor = db.cursor()
-        query = """DROP TABLE zoomcodes"""
+        query = ("DROP TABLE zoomcodes")
         cursor.execute(query)
         db.commit()
         print("Nice")
 
-addtodatabase()
+def readtable():
+    with sqlite3.connect('data.sqlite') as db:
+        cursor = db.cursor()
+        query = cursor.execute("SELECT lesson, code, password FROM zoomcodes").fetchall()
+        print(query)
+
+
+readtable()
